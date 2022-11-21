@@ -1,7 +1,7 @@
 package com.cydeo.service.impl;
 
 import com.cydeo.entity.User;
-import com.cydeo.entity.UserPrincipal;
+import com.cydeo.entity.common.UserPrincipal;
 import com.cydeo.repository.UserRepository;
 import com.cydeo.service.SecurityService;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,7 +27,7 @@ public class SecurityServiceImpl implements SecurityService {
 
         User user = userRepository.findByUserNameAndIsDeleted(username, false);
 
-        if(user ==null){
+        if(user == null){
             throw new UsernameNotFoundException(username);
         }
 
